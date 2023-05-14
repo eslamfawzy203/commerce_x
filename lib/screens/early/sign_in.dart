@@ -1,4 +1,5 @@
-import 'package:commerce_x/screens/sign_up.dart';
+import 'package:commerce_x/screens/early/sign_up.dart';
+import 'package:commerce_x/screens/home_base.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:commerce_x/widgets/customized_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class SignIn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(backgroundColor: Colors.grey[50],elevation: 0),
+    return Scaffold(
       body: Padding(
         padding:  EdgeInsets.symmetric(horizontal: 10.h),
         child: SingleChildScrollView(
@@ -23,7 +24,7 @@ class SignIn extends StatelessWidget {
             SizedBox(height: 30.h),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset(
-                'assets/images/logo2.png',
+                '../assets/images/logo2rt.png',
               )
             ]),
             Padding(
@@ -57,23 +58,26 @@ class SignIn extends StatelessWidget {
                 child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(context, MaterialPageRoute<void>(
-              builder: (BuildContext context) => const SignUp()));
+              builder: (BuildContext context) => const HomeBase()));
                     },
                     child: const Text('Login')),
               ),
             ), SizedBox(height: 15.h),
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children:  [
-                const CircleAvatar(
+                const CircleAvatar(backgroundColor: Colors.black12,
                   foregroundImage: AssetImage('assets/images/google_logo1.png'),
                 ),SizedBox(width: 50.w),
                 const CircleAvatar(backgroundColor:Colors
-                .white,foregroundImage: AssetImage('assets/images/facebook_logo5.png'),)
+                .black12,foregroundImage: AssetImage('assets/images/facebook_logo5.png'),)
               ],
             ),SizedBox(height:15.h),
             Row(mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                customizedText(data: "Don't have an account?"),TextButton(onPressed: (){}, child:const Text('Sign Up')),
+                customizedText(data: "Don't have an account?"),TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute<void>(
+              builder: (BuildContext context) => const SignUp()));
+                }, child:const Text('Sign Up')),
               ],
             )
           ]),

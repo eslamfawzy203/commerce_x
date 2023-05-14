@@ -1,4 +1,5 @@
-import 'package:commerce_x/screens/verification.dart';
+import 'package:commerce_x/screens/early/verification.dart';
+import 'package:commerce_x/screens/home_base.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:commerce_x/widgets/customized_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +14,9 @@ class SignUp extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.black),
-          backgroundColor: Colors.grey[50],
+          iconTheme: const IconThemeData(color: Colors.blue),
+          backgroundColor:
+          Colors.black12,
         ),
         body: Padding(
           padding:  EdgeInsets.symmetric(horizontal: 10.h),
@@ -31,7 +33,7 @@ class SignUp extends StatelessWidget {
                   SizedBox(height: 30.h),
                           Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Image.asset(
-                  'assets/images/logo2.png',
+                  '../assets/images/logo2rt.png',
                 )
                           ]),
                           Padding(
@@ -70,7 +72,10 @@ class SignUp extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   customizedText(data: "Already have an account?"),
-                  TextButton(onPressed: () {}, child: const Text('Sign in')),
+                  TextButton(onPressed: () {
+                           Navigator.push(context, MaterialPageRoute<void>(
+              builder: (BuildContext context) => const HomeBase()));
+                  }, child: const Text('Sign in')),
                 ],
                           )
                         ]),

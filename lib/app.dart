@@ -1,6 +1,7 @@
-import 'package:commerce_x/screens/splash.dart';
+import 'package:commerce_x/screens/early/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,10 +13,22 @@ class MyApp extends StatelessWidget {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
             title: 'Flutter Demo',
-            theme: ThemeData(
-              primarySwatch: Colors.blue,
+            theme: ThemeData.dark(
+              useMaterial3: true
+
+          // primarySwatch: Colors.blue,
+
             ),
-            home: const Splash()
+            home://const HomeScreen()
+            const Splash()
+            //const HomeBase() 
+            //const Search()
+            //const WishList()
+            //const Profile()
+            //const Category1()
+            //const HomeScreen()
+            
+            
             );},
     );
   }

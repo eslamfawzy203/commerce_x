@@ -10,9 +10,10 @@ class Verification extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey[50],
-        iconTheme: const IconThemeData(color: Colors.black),
-        elevation: 0,
+       elevation: 0,
+          iconTheme: const IconThemeData(color: Colors.blue),
+          backgroundColor:
+          Colors.black12,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.h),
