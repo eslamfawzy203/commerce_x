@@ -1,8 +1,8 @@
-import 'package:commerce_x/screens/category_1.dart';
-import 'package:commerce_x/screens/home_screen.dart';
-import 'package:commerce_x/screens/profile.dart';
-import 'package:commerce_x/screens/search.dart';
-import 'package:commerce_x/screens/wish_list.dart';
+import 'package:commerce_x/screens/Home/category_1.dart';
+import 'package:commerce_x/screens/Home/home_screen.dart';
+import 'package:commerce_x/screens/Home/profile.dart';
+import 'package:commerce_x/screens/Home/search.dart';
+import 'package:commerce_x/screens/Home/wish_list.dart';
 import 'package:flutter/material.dart';
 
 List<Widget> list = const [

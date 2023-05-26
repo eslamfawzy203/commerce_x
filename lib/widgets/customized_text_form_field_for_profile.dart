@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: camel_case_types, must_be_immutable
-class customizedTextFormField extends StatelessWidget {
-  TextEditingController? controller;
+class customizedTextFormFieldForProfile extends StatelessWidget {
+  TextEditingController controller;
 
   String hintText;
   int? maxLines;
 
-  customizedTextFormField({
+  customizedTextFormFieldForProfile({
     super.key,
     required this.hintText,
     this.maxLines,
-    this.controller,
+   required this.controller,
   });
 
   @override

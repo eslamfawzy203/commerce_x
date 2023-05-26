@@ -1,5 +1,5 @@
 import 'package:commerce_x/screens/early/sign_up.dart';
-import 'package:commerce_x/screens/home_base.dart';
+import 'package:commerce_x/screens/Home/home_base.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:commerce_x/widgets/customized_text_form_field.dart';
 import 'package:flutter/material.dart';
@@ -12,12 +12,13 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding:  EdgeInsets.symmetric(horizontal: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.h),
         child: SingleChildScrollView(
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          child:
+              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             customizedText(
               data: 'Welcome back!',
-              style:  TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
             ),
             SizedBox(height: 10.h),
             customizedText(data: 'Login to your existing account'),
@@ -28,17 +29,17 @@ class SignIn extends StatelessWidget {
               )
             ]),
             Padding(
-              padding:  EdgeInsets.only(left: 5.w, bottom: 5.w),
+              padding: EdgeInsets.only(left: 5.w, bottom: 5.w),
               child: customizedText(data: ('Email Address')),
             ),
             customizedTextFormField(hintText: 'e.g name@example.com'),
             Padding(
-              padding:  EdgeInsets.only(left: 5.w, bottom: 5.w),
+              padding: EdgeInsets.only(left: 5.w, bottom: 5.w),
               child: customizedText(data: 'Password'),
             ),
             customizedTextFormField(hintText: 'e.g *************'),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween ,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Row(
                   children: [
@@ -50,34 +51,56 @@ class SignIn extends StatelessWidget {
                 customizedText(data: 'Forget Password'),
               ],
             ),
-             SizedBox(
+            SizedBox(
               height: 50.h,
             ),
             Center(
-              child: SizedBox(width: double.infinity.w,height: 40.h,
+              child: SizedBox(
+                width: double.infinity.w,
+                height: 40.h,
                 child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute<void>(
-              builder: (BuildContext context) => const HomeBase()));
+                      //print(SharedHelper().getStringData('Name')); Done Eslam printed
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const HomeBase()));
                     },
                     child: const Text('Login')),
               ),
-            ), SizedBox(height: 15.h),
-            Row(mainAxisAlignment: MainAxisAlignment.center,
-              children:  [
-                const CircleAvatar(backgroundColor: Colors.black12,
-                  foregroundImage: AssetImage('assets/images/google_logo1.png'),
-                ),SizedBox(width: 50.w),
-                const CircleAvatar(backgroundColor:Colors
-                .black12,foregroundImage: AssetImage('assets/images/facebook_logo5.png'),)
-              ],
-            ),SizedBox(height:15.h),
-            Row(mainAxisAlignment: MainAxisAlignment.center,
+            ),
+            SizedBox(height: 15.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                customizedText(data: "Don't have an account?"),TextButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute<void>(
-              builder: (BuildContext context) => const SignUp()));
-                }, child:const Text('Sign Up')),
+                const CircleAvatar(
+                  backgroundColor: Colors.black12,
+                  foregroundImage:
+                      AssetImage('../assets/images/google_logo1.png'),
+                ),
+                SizedBox(width: 50.w),
+                const CircleAvatar(
+                  backgroundColor: Colors.black12,
+                  foregroundImage:
+                      AssetImage('../assets/images/facebook_logo5.png'),
+                )
+              ],
+            ),
+            SizedBox(height: 15.h),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                customizedText(data: "Don't have an account?"),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute<void>(
+                              builder: (BuildContext context) =>
+                                  const SignUp()));
+                    },
+                    child: const Text('Sign Up')),
               ],
             )
           ]),

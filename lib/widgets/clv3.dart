@@ -1,36 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
-class CustomizedListView3 extends StatelessWidget {
-  Widget leading;
-  Widget title;
-  Widget trailing;
-  Widget? subtitle;
-  int itemCount;
-  CustomizedListView3(
-      {super.key,
-      required this.leading,
-      required this.title,
-      required this.trailing,
-      required this.itemCount,
-      this.subtitle});
+
+
+class cart_list_view extends StatelessWidget {
+  const cart_list_view({
+    super.key,
+    required this.leading,
+    required this.title,
+    required this.subtitle,
+    required this.trailing,
+  });
+
+  final Widget leading;
+  final Widget title;
+  final Widget? subtitle;
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        scrollDirection: Axis.vertical,
-        itemCount: itemCount,
-        itemBuilder: (context, index) {
-          return Card(
-              elevation: 2,
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
-                leading: leading,
-                title: title,
-                subtitle: subtitle,
-                trailing: trailing,
-              ));
-        });
+    return Card(
+        elevation: 2,
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10)),
+        child: ListTile(
+          leading: leading,
+          title: title,
+          subtitle: subtitle,
+          trailing: trailing,
+        
+        ));
   }
 }

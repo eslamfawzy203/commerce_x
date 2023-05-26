@@ -10,10 +10,7 @@ class Verification extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       elevation: 0,
-          iconTheme: const IconThemeData(color: Colors.blue),
-          backgroundColor:
-          Colors.black12,
+        iconTheme: const IconThemeData(color: Colors.blue),
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.h),
@@ -25,7 +22,8 @@ class Verification extends StatelessWidget {
                 padding: EdgeInsets.only(bottom: 10.h),
                 child: customizedText(
                   data: 'Verification',
-                  style: TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 28.sp, fontWeight: FontWeight.bold),
                 ),
               ),
               customizedText(
@@ -45,8 +43,8 @@ class Verification extends StatelessWidget {
                   child: SizedBox(
                 width: double.infinity.w,
                 height: 40.h,
-                child:
-                    ElevatedButton(onPressed: () {}, child: const Text('Verify')),
+                child: ElevatedButton(
+                    onPressed: () {}, child: const Text('Verify')),
               ))
             ],
           ),

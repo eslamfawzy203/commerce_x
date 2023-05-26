@@ -8,7 +8,7 @@ class customizedText extends StatelessWidget {
    customizedText({
     required this.data,
     super.key,
-    this.style
+    this.style, 
   });
 
   @override
