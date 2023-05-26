@@ -52,7 +52,7 @@ class ShippingAddress extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return cart_list_view(
                       leading: Image.asset(
-                          'commerce_x/assets/images/msi_gaming.png'),
+                          '../assets/images/msi_gaming.png'),
                       title: customizedText(
                         data: 'Mohsen',
                       ),
