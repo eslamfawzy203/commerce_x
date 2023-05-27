@@ -23,13 +23,12 @@ class HomeScreen extends ConsumerWidget {
         child: Column(
           children: [
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 15.h),
+              padding: EdgeInsets.symmetric(vertical: 40.h),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Expanded(
-                      child: customizedSearchBar(hintText: 'Search Product')),
+                  Expanded(child: SingleChildScrollView(child: customizedSearchBar(hintText: 'Search Product'))),
                   InkWell(
                     onTap: () {
                       Navigator.push(
@@ -74,7 +73,7 @@ class HomeScreen extends ConsumerWidget {
                   itemBuilder: (context, index) {
                     return custom_list_view_widget(
                         radius: 15,
-                        height: 120.h,
+                        height: 100.h,
                         width: 150.w,
                         path: product[index].image,
                         textOnImage: product[index].name);
@@ -83,6 +82,7 @@ class HomeScreen extends ConsumerWidget {
             CustomizedRow(data1: 'Featured Products', data2: 'See More'),
             Expanded(
               child: ListView.builder(
+                shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: product.length,
                   itemBuilder: (context, index) {
@@ -98,7 +98,7 @@ class HomeScreen extends ConsumerWidget {
                             ));
                       },
                       radius: 15,
-                      height: 70.h,
+                      height: 60.h,
                       width: 80.w,
                       path: product[index].image,
                       name: product[index].name,
@@ -125,8 +125,8 @@ class HomeScreen extends ConsumerWidget {
                             ));
                       },
                       radius: 15,
-                      height: 70.h,
-                      width: 80.w,
+                      height: 40.h,
+                      width: 70.w,
                       path: product[index].image,
                       name: product[index].name,
                       price: product[index].price,

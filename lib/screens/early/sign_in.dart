@@ -12,7 +12,7 @@ class SignIn extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.h,vertical: 40.h),
         child: SingleChildScrollView(
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -25,7 +25,7 @@ class SignIn extends StatelessWidget {
             SizedBox(height: 30.h),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               Image.asset(
-                '../assets/images/logo2rt.png',
+                'assets/images/logo2rt.png',
               )
             ]),
             Padding(
@@ -77,13 +77,13 @@ class SignIn extends StatelessWidget {
                 const CircleAvatar(
                   backgroundColor: Colors.black12,
                   foregroundImage:
-                      AssetImage('../assets/images/google_logo1.png'),
+                      AssetImage('assets/images/google_logo1.png'),
                 ),
                 SizedBox(width: 50.w),
                 const CircleAvatar(
                   backgroundColor: Colors.black12,
                   foregroundImage:
-                      AssetImage('../assets/images/facebook_logo5.png'),
+                      AssetImage('assets/images/facebook_logo5.png'),
                 )
               ],
             ),

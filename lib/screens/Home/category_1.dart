@@ -11,7 +11,7 @@ class Category1 extends StatelessWidget {
     return Scaffold(
      body:
      Padding(
-       padding: EdgeInsets.symmetric(horizontal: 10.h),
+       padding: EdgeInsets.symmetric(horizontal: 10.h,vertical: 40.h),
        child: Column(crossAxisAlignment: CrossAxisAlignment.center,
        mainAxisSize: MainAxisSize.min,
         children: [Row(

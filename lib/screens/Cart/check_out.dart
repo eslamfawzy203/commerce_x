@@ -29,14 +29,14 @@ class CheckOut extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 5.h),
               child: CustomizedRow(
                 data1: 'Your Address',
                 data2: 'Change Address',
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 5.h),
               child: Material(
                 borderRadius: BorderRadius.circular(30),
                 elevation: 10,
@@ -53,14 +53,14 @@ class CheckOut extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 5.h),
               child: CustomizedRow(
                 data1: 'Shopping Mode',
                 data2: 'Change Mode',
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 5.h),
               child: Material(
                 borderRadius: BorderRadius.circular(30),
                 elevation: 10,
@@ -92,8 +92,8 @@ class CheckOut extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return custom_list_view_2_widget(
                       radius: 15,
-                      height: 60.h,
-                      width: 40.w,
+                      height: 70.h,
+                      width: 80.w,
                       path: product[index].image,
                       name: product[index].name,
                       price: product[index].price,
@@ -102,7 +102,7 @@ class CheckOut extends StatelessWidget {
                   }),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
+              padding: EdgeInsets.only(bottom: 5.h),
               child: Row(
                 children: [
                   customizedText(
@@ -121,8 +121,8 @@ class CheckOut extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return custom_list_view_2_widget(
                       radius: 15,
-                      height: 60.h,
-                      width: 80.w,
+                      height: 50.h,
+                      width: 60.w,
                       path: paymentMethod[index].image,
                       name: '',
                       price: 0,

@@ -1,4 +1,4 @@
-import 'package:commerce_x/screens/App/product_details.dart';
+
 import 'package:flutter/material.dart';
 
 class CustomizedContainer extends StatelessWidget {
@@ -15,7 +15,7 @@ class CustomizedContainer extends StatelessWidget {
             width: double.infinity,
             height: double.infinity,
             fit: BoxFit.cover,
-            '../assets/images/laptops2.png'),
+            'assets/images/laptops2.png'),
         // InkWell(
         //   onTap: () {
             

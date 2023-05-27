@@ -29,7 +29,7 @@ class SignUp extends StatelessWidget {
               SizedBox(height: 30.h),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Image.asset(
-                  '../assets/images/logo2rt.png',
+                  'assets/images/logo2rt.png',
                 )
               ]),
               Padding(
@@ -46,7 +46,7 @@ class SignUp extends StatelessWidget {
                 padding: EdgeInsets.only(left: 5.w, bottom: 5.w),
                 child: customizedText(data: 'Password'),
               ),
-           //   customizedTextFormField(hintText: 'Please enter your Password'),
+              customizedTextFormField(hintText: 'Please enter your Password'),
               SizedBox(
                 height: 50.h,
               ),

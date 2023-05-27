@@ -73,7 +73,7 @@ class Settings extends ConsumerWidget {
                         : ref
                             .read(appThemeProvider.notifier)
                             .setTheme(!isDarkMode);
-                    SharedHelper().setStringData('Name', 'Eslam');
+                    
                   },
                 ),
               ),
