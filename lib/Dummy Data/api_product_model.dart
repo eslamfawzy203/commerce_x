@@ -5,16 +5,19 @@ class ApiProductModel {
   String? description;
   String? category;
   String? image;
-  
+  int? quantity;
+  bool isFavourite = false;
 
-  ApiProductModel(
-      {this.id,
-      this.title,
-      this.price,
-      this.description,
-      this.category,
-      this.image,
-      });
+  ApiProductModel({
+    this.id,
+    this.title,
+    this.price,
+    this.description,
+    this.category,
+    this.image,
+    this.quantity,
+    required this.isFavourite,
+  });
 
   ApiProductModel.fromJson(Map<String, dynamic> json) {
     id = json['id'];
@@ -34,9 +37,7 @@ class ApiProductModel {
     data['description'] = this.description;
     data['category'] = this.category;
     data['image'] = this.image;
-    
+
     return data;
   }
 }
-
-

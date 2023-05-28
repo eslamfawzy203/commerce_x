@@ -1,17 +1,18 @@
-
-
+import 'package:commerce_x/Dummy%20Data/api_product_model.dart';
 import 'package:commerce_x/Model/product_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final productDetailProvider = StateProvider((ref) => Product(
+final productDetailProvider = StateProvider(
+  (ref) => ApiProductModel(
     description: '',
     id: 0,
     image: '',
-    name: '',
+    //name: '',
     price: 0,
     isFavourite: false,
-    quantity: 2,),
-    );
+    quantity: 2,
+  ),
+);
 
 
 // final productDetailProvider1 = StateProvider((ref) => ApiProductModel(),

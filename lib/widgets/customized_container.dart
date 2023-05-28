@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class CustomizedContainer extends StatelessWidget {
@@ -12,13 +11,13 @@ class CustomizedContainer extends StatelessWidget {
       clipBehavior: Clip.hardEdge,
       child: Stack(children: [
         Image.asset(
-            width: double.infinity,
-            height: double.infinity,
-            fit: BoxFit.cover,
+          width: double.infinity,
+          height: double.infinity,
+          fit: BoxFit.cover,
             'assets/images/laptops2.png'),
         // InkWell(
         //   onTap: () {
-            
+
         //   },
         //   child: Container(
         //     width: double.infinity,

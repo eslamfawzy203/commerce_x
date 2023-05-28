@@ -97,7 +97,7 @@ class CheckOut extends StatelessWidget {
                       path: product[index].image,
                       name: product[index].name,
                       price: product[index].price,
-                    //  isFavourite: product[index].isFavourite,
+                      isFavourite: product[index].isFavourite,
                     );
                   }),
             ),
@@ -126,7 +126,7 @@ class CheckOut extends StatelessWidget {
                       path: paymentMethod[index].image,
                       name: '',
                       price: 0,
-                     // isFavourite: paymentMethod[index].isFavourite,
+                      isFavourite: paymentMethod[index].isFavourite,
                     );
                   }),
             ),

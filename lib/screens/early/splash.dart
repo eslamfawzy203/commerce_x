@@ -15,6 +15,9 @@ class _SplashState extends State<Splash> {
   @override
   initState() {
     getProducts();
+    getCategories();
+    getJewelery();
+    getWomenClothing();
     super.initState();
   }
 

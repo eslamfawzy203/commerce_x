@@ -17,9 +17,9 @@ class ModalBottomSheet extends ConsumerWidget {
         child: Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        Image.asset(
-          choosenProduct.image,
-          fit: BoxFit.cover,
+        Image.network(
+          choosenProduct.image!,
+          fit: BoxFit.contain,
         ),
         ElevatedButton(
           child: const Text('show Product Details'),
@@ -30,7 +30,7 @@ class ModalBottomSheet extends ConsumerWidget {
               builder: (BuildContext context) {
                 return Container(
                     width: double.infinity.w,
-                    height: 400.h,
+                    height: 600.h,
                     decoration: const BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -98,7 +98,7 @@ class ModalBottomSheet extends ConsumerWidget {
                           Padding(
                             padding: EdgeInsets.only(bottom: 15.h),
                             child: customizedText(
-                                data: choosenProduct.name,
+                                data: choosenProduct.title!,
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 15.sp,
@@ -116,10 +116,10 @@ class ModalBottomSheet extends ConsumerWidget {
                           Padding(
                             padding: EdgeInsets.only(bottom: 8.h),
                             child: customizedText(
-                              data: choosenProduct.description,
+                              data: choosenProduct.description!,
                               style: const TextStyle(
                                   wordSpacing: 2,
-                                  height: 2,
+                                  height: 1,
                                   color: Colors.black38),
                             ),
                           ),

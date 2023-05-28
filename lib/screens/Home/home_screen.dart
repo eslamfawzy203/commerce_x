@@ -74,12 +74,22 @@ class HomeScreen extends ConsumerWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: apiProducts.length,
                   itemBuilder: (context, index) {
-                    return customized_api_list_view_widget(
-                        radius: 15,
-                        height: 100.h,
-                        width: 150.w,
-                        path: apiProducts[index].image,
-                        textOnImage: apiProducts[index].title);
+                    return InkWell(onTap: () {
+                      ref.read(productDetailProvider.notifier)
+                            .update((state) => apiProducts[index]);
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const ProductDetails(),
+                            ));
+                    },
+                      child: customized_api_list_view_widget(
+                          radius: 15,
+                          height: 100.h,
+                          width: 150.w,
+                          path: apiProducts[index].image,
+                          textOnImage: apiProducts[index].title),
+                    );
                   }),
             ),
             CustomizedRow(data1: 'Featured Products', data2: 'See More'),
@@ -87,13 +97,13 @@ class HomeScreen extends ConsumerWidget {
               child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: apiProducts.length,
+                  itemCount: jewelery.length,
                   itemBuilder: (context, index) {
                     return custom_list_view_2_widget(
                       onTap: () {
                         ref
                             .read(productDetailProvider.notifier)
-                            .update((state) => apiProducts[index]);
+                            .update((state) => jewelery[index]);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -103,10 +113,10 @@ class HomeScreen extends ConsumerWidget {
                       radius: 15,
                       height: 100.h,
                       width: 150.w,
-                      path: apiProducts[index].image,
-                      name: apiProducts[index].title,
-                      price: apiProducts[index].price,
-                     // isFavourite: product[index].isFavourite,
+                      path: jewelery[index].image,
+                      name: jewelery[index].title,
+                      price: jewelery[index].price,
+                      isFavourite: jewelery[index].isFavourite,
                     );
                   }),
             ),
@@ -115,13 +125,13 @@ class HomeScreen extends ConsumerWidget {
               child: ListView.builder(
                 shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: apiProducts.length,
+                  itemCount: womenClothing.length,
                   itemBuilder: (context, index) {
                     return custom_list_view_2_widget(
                       onTap: () {
                         ref
                             .read(productDetailProvider.notifier)
-                            .update((state) => apiProducts[index]);
+                            .update((state) => womenClothing[index]);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -131,10 +141,10 @@ class HomeScreen extends ConsumerWidget {
                       radius: 15,
                       height: 80.h,
                       width: 130.w,
-                      path: apiProducts[index].image,
-                      name: apiProducts[index].title,
-                      price: apiProducts[index].price,
-                     // isFavourite: apiProducts[index].isFavourite,
+                      path: womenClothing[index].image,
+                      name: womenClothing[index].title,
+                      price: womenClothing[index].price,
+                      isFavourite: womenClothing[index].isFavourite,
                     );
                   }),
             )

@@ -1,3 +1,4 @@
+import 'package:commerce_x/Dummy%20Data/api_data.dart';
 import 'package:commerce_x/widgets/customized_container.dart';
 import 'package:commerce_x/widgets/customized_search_bar.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,7 @@ class Category1 extends StatelessWidget {
           child: GridView.builder(
             itemCount: 4,
             itemBuilder: (context, index) {
-              return const CustomizedContainer();
+              return  const CustomizedContainer();
             },
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 2, mainAxisSpacing: 5,crossAxisSpacing: 5),

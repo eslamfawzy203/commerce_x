@@ -49,11 +49,11 @@ class Cart extends ConsumerWidget {
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       return cart_list_view(
-                        leading: Image.asset(
+                        leading: Image.network(
                             fit: BoxFit.cover,
-                            ref.watch(cartProvider)[index].image),
+                            ref.watch(cartProvider)[index].image!),
                         title: customizedText(
-                            data: (ref.watch(cartProvider)[index].name)),
+                            data: (ref.watch(cartProvider)[index].title!)),
                         subtitle: customizedText(
                           data: ref.watch(cartProvider)[index].price.toString(),
                         ),
