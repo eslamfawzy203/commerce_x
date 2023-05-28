@@ -1,20 +1,28 @@
+import 'dart:io';
 import 'package:commerce_x/Local/shared_helper.dart';
 import 'package:commerce_x/Local/user_model.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:commerce_x/widgets/customized_text_form_field_for_profile.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:image_picker/image_picker.dart';
 
 TextEditingController nameController = TextEditingController();
 TextEditingController emailController = TextEditingController();
 TextEditingController phoneController = TextEditingController();
 TextEditingController countryController = TextEditingController();
 
-class EditProfile extends StatelessWidget {
-  const EditProfile({super.key});
+final imagePickerProvider =  StateProvider<String>(
+    (ref) =>  '');
+
+class EditProfile extends ConsumerWidget {
+  EditProfile({super.key});
+  final ImagePicker picker = ImagePicker();
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, ref) {
+    final image = ref.watch(imagePickerProvider);
     return Scaffold(
         appBar: AppBar(
           title: Center(
@@ -40,14 +48,23 @@ class EditProfile extends StatelessWidget {
                   child: Stack(
                     alignment: Alignment.bottomRight,
                     children: [
-                      const CircleAvatar(
-                          radius: 50,
-                          backgroundImage:
-                              AssetImage('assets/images/profile.jpg')),
                       CircleAvatar(
-                          radius: 15,
-                          backgroundColor: Colors.grey[50],
-                          child: const Icon(Icons.camera_alt_rounded))
+                          radius: 50, backgroundImage: FileImage(File(image.isNotEmpty ? image : 'asstes/images/profile.jpg'))),
+                      InkWell(
+                        onTap: () async {
+                          final XFile? photo = await picker.pickImage(
+                              source: ImageSource.camera);
+                          ref
+                              .read(imagePickerProvider.notifier)
+                              .update((state) => photo!.path);
+                          SharedHelper()
+                              .setStringData('ProfileImage', photo!.path);
+                        },
+                        child: CircleAvatar(
+                            radius: 15,
+                            backgroundColor: Colors.grey[50],
+                            child: const Icon(Icons.camera_alt_rounded)),
+                      )
                     ],
                   ),
                 ),
@@ -77,11 +94,13 @@ class EditProfile extends StatelessWidget {
                           SharedHelper().setStringData(
                               'User0',
                               UserModel(
-                                  id: 0,
-                                  name: nameController.text,
-                                  email: emailController.text,
-                                  phone: phoneController.text,
-                                  country: countryController.text).toMap().toString());
+                                      id: 0,
+                                      name: nameController.text,
+                                      email: emailController.text,
+                                      phone: phoneController.text,
+                                      country: countryController.text)
+                                  .toMap()
+                                  .toString());
                         },
                         child: const Text('Save')),
                   ),

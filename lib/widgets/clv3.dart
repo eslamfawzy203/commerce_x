@@ -24,12 +24,14 @@ class cart_list_view extends StatelessWidget {
         elevation: 2,
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)),
-        child: ListTile(
-          leading: leading,
-          title: title,
-          subtitle: subtitle,
-          trailing: trailing,
-        
+        child: SizedBox(height: 100,
+          child: ListTile(
+            leading: leading,
+            title: title,
+            subtitle: subtitle,
+            trailing: trailing,
+          
+          ),
         ));
   }
 }

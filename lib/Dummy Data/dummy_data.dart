@@ -66,8 +66,40 @@ List<Product> product = [
     isFavourite: true,
   ),
 ];
-List<Product> paymentMethod = [Product(id: 0, name: 'Paypal', price: 0, description: '', image: 'assets/images/pp.png', isFavourite: false),
-Product(id: 1, name: 'VISA', price: 0, description: '', image: 'assets/images/visa.png', isFavourite: false),
-Product(id: 2, name: 'MasterCard', price: 0, description: '', image: 'assets/images/mc.png', isFavourite: false),
-Product(id: 3, name: 'Apple Pay', price: 0, description: '', image: 'assets/images/ap.png', isFavourite: false),
-Product(id: 4, name: 'google Pay', price: 0, description: '', image:'assets/images/gp.jpg' , isFavourite: false)];
+List<Product> paymentMethod = [
+  Product(
+      id: 0,
+      name: 'Paypal',
+      price: 0,
+      description: '',
+      image: 'assets/images/pp.png',
+      isFavourite: false),
+  Product(
+      id: 1,
+      name: 'VISA',
+      price: 0,
+      description: '',
+      image: 'assets/images/visa.png',
+      isFavourite: false),
+  Product(
+      id: 2,
+      name: 'MasterCard',
+      price: 0,
+      description: '',
+      image: 'assets/images/mc.png',
+      isFavourite: false),
+  Product(
+      id: 3,
+      name: 'Apple Pay',
+      price: 0,
+      description: '',
+      image: 'assets/images/ap.png',
+      isFavourite: false),
+  Product(
+      id: 4,
+      name: 'google Pay',
+      price: 0,
+      description: '',
+      image: 'assets/images/gp.jpg',
+      isFavourite: false)
+];

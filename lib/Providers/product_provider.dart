@@ -1,3 +1,5 @@
+
+
 import 'package:commerce_x/Model/product_model.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -10,3 +12,7 @@ final productDetailProvider = StateProvider((ref) => Product(
     isFavourite: false,
     quantity: 2,),
     );
+
+
+// final productDetailProvider1 = StateProvider((ref) => ApiProductModel(),
+//     );

@@ -1,9 +1,9 @@
+import 'package:commerce_x/Dummy%20Data/api_data.dart';
 import 'package:commerce_x/Providers/product_provider.dart';
-import 'package:commerce_x/Dummy%20Data/dummy_data.dart';
 import 'package:commerce_x/screens/Cart/cart.dart';
 import 'package:commerce_x/screens/App/notifications.dart';
 import 'package:commerce_x/screens/App/product_details.dart';
-import 'package:commerce_x/widgets/customized_list_view.dart';
+import 'package:commerce_x/widgets/customized_api_list_view.dart';
 import 'package:commerce_x/widgets/customized_row.dart';
 import 'package:commerce_x/widgets/customized_search_bar.dart';
 import 'package:flutter/material.dart';
@@ -28,7 +28,10 @@ class HomeScreen extends ConsumerWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  Expanded(child: SingleChildScrollView(child: customizedSearchBar(hintText: 'Search Product'))),
+                  Expanded(
+                      child: SingleChildScrollView(
+                          child:
+                              customizedSearchBar(hintText: 'Search Product'))),
                   InkWell(
                     onTap: () {
                       Navigator.push(
@@ -69,28 +72,28 @@ class HomeScreen extends ConsumerWidget {
               child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: product.length,
+                  itemCount: apiProducts.length,
                   itemBuilder: (context, index) {
-                    return custom_list_view_widget(
+                    return customized_api_list_view_widget(
                         radius: 15,
                         height: 100.h,
                         width: 150.w,
-                        path: product[index].image,
-                        textOnImage: product[index].name);
+                        path: apiProducts[index].image,
+                        textOnImage: apiProducts[index].title);
                   }),
             ),
             CustomizedRow(data1: 'Featured Products', data2: 'See More'),
             Expanded(
               child: ListView.builder(
-                shrinkWrap: true,
+                  shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: product.length,
+                  itemCount: apiProducts.length,
                   itemBuilder: (context, index) {
                     return custom_list_view_2_widget(
                       onTap: () {
                         ref
                             .read(productDetailProvider.notifier)
-                            .update((state) => product[index]);
+                            .update((state) => apiProducts[index]);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -98,26 +101,27 @@ class HomeScreen extends ConsumerWidget {
                             ));
                       },
                       radius: 15,
-                      height: 60.h,
-                      width: 80.w,
-                      path: product[index].image,
-                      name: product[index].name,
-                      price: product[index].price,
-                      isFavourite: product[index].isFavourite,
+                      height: 100.h,
+                      width: 150.w,
+                      path: apiProducts[index].image,
+                      name: apiProducts[index].title,
+                      price: apiProducts[index].price,
+                     // isFavourite: product[index].isFavourite,
                     );
                   }),
             ),
             CustomizedRow(data1: 'Best Selling Products', data2: 'See More'),
             Expanded(
               child: ListView.builder(
+                shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: product.length,
+                  itemCount: apiProducts.length,
                   itemBuilder: (context, index) {
                     return custom_list_view_2_widget(
                       onTap: () {
                         ref
                             .read(productDetailProvider.notifier)
-                            .update((state) => product[index]);
+                            .update((state) => apiProducts[index]);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -125,12 +129,12 @@ class HomeScreen extends ConsumerWidget {
                             ));
                       },
                       radius: 15,
-                      height: 40.h,
-                      width: 70.w,
-                      path: product[index].image,
-                      name: product[index].name,
-                      price: product[index].price,
-                      isFavourite: product[index].isFavourite,
+                      height: 80.h,
+                      width: 130.w,
+                      path: apiProducts[index].image,
+                      name: apiProducts[index].title,
+                      price: apiProducts[index].price,
+                     // isFavourite: apiProducts[index].isFavourite,
                     );
                   }),
             )

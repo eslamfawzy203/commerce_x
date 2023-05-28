@@ -16,13 +16,13 @@ List<String> profileContents = [
   'My Card',
   'Settings',
 ];
-List<Widget> profileContentScreens = const [
+List<Widget> profileContentScreens =  [
   EditProfile(),
-  MyOrders(),
-  Language(),
-  ShippingAddress(),
-  MyCards(),
-  Settings(),
+  const MyOrders(),
+  const Language(),
+  const ShippingAddress(),
+  const MyCards(),
+  const Settings(),
 ];
 int? selected;
 
@@ -39,7 +39,7 @@ class Profile extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Padding(
-                padding: EdgeInsets.symmetric(vertical: 5.h),
+                padding: EdgeInsets.symmetric(vertical: 40.h),
                 child: const CircleAvatar(
                     radius: 50,
                     backgroundImage:

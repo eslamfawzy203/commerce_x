@@ -57,18 +57,19 @@ class Cart extends ConsumerWidget {
                         subtitle: customizedText(
                           data: ref.watch(cartProvider)[index].price.toString(),
                         ),
-                        trailing: SingleChildScrollView(
+                        trailing: SingleChildScrollView(padding: EdgeInsets.symmetric(vertical: 5.h),
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               IconButton(
                                   onPressed: () {
                                     ref.watch(cartProvider.notifier).addToCart(
                                         ref.watch(cartProvider)[index]);
                                   },
-                                  icon: const Icon(
+                                  icon: const Icon(opticalSize: 3,
                                     Icons.add,
-                                    size: 10,
+                                    size: 12,
                                   )),
                               customizedText(
                                   data: ref
@@ -82,9 +83,9 @@ class Cart extends ConsumerWidget {
                                         .removerFromCart(
                                             ref.watch(cartProvider)[index]);
                                   },
-                                  icon: const Icon(
+                                  icon: const Icon(opticalSize:5,
                                     Icons.minimize,
-                                    size: 10,
+                                    size: 12,
                                   )),
                             ],
                           ),
