@@ -59,7 +59,7 @@ class ShippingAddress extends StatelessWidget {
                       subtitle: customizedText(
                         data: "200",
                       ),
-                      trailing: Icon(Icons.shopping_cart));
+                      trailing: const Icon(Icons.shopping_cart));
                 }),
           ) 
                //CustomizedListView3(

@@ -45,17 +45,9 @@ class WishList extends StatelessWidget {
                         subtitle: customizedText(
                           data: "200",
                         ),
-                        trailing: Icon(Icons.shopping_cart));
+                        trailing: const Icon(Icons.shopping_cart));
                   }),
             )
-            // CustomizedListView3(
-            //   shrinkWrap: true,
-            //   leading: Image.asset('../assets/images/laptops2.png'),
-            //   title: const Text('Bluetooth Printer'),
-            //   trailing: const Icon(Icons.shopping_cart_sharp),
-            //   subtitle:
-            //   customizedText(data: (String.fromCharCodes(Runes('\u0024')))), itemCount: 5,
-            // )
           ],
         ),
       ),

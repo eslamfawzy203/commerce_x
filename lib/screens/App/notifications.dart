@@ -45,7 +45,7 @@ class Notifications extends StatelessWidget {
                       subtitle: customizedText(
                         data: "200",
                       ),
-                      trailing: Icon(Icons.shopping_cart));
+                      trailing: const Icon(Icons.shopping_cart));
                 }),
           ), // CustomizedListView3(shrinkWrap: true,
             //   leading: Image.asset('../assets/images/laptops2.png'),

@@ -5,12 +5,12 @@ import 'package:commerce_x/screens/Home/search.dart';
 import 'package:commerce_x/screens/Home/wish_list.dart';
 import 'package:flutter/material.dart';
 
-List<Widget> list = const [
-  HomeScreen(),
-  Category1(),
-  Search(),
-  WishList(),
-  Profile()
+List<Widget> list =  [
+  const HomeScreen(),
+  const Category1(),
+  const Search(),
+  const WishList(),
+  const Profile()
 ];
 
 class HomeBase extends StatefulWidget {

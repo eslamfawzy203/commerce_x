@@ -6,7 +6,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 // ignore: camel_case_types
 class customizedSearchBar extends StatelessWidget {
   String? hintText;
-   customizedSearchBar({this.hintText,
+  void Function(String)? onChanged;
+   customizedSearchBar( {this.hintText,this.onChanged,
     super.key,
   });
 
@@ -21,6 +22,7 @@ class customizedSearchBar extends StatelessWidget {
         child: SizedBox(
           height: 40.h,
           child: TextField(
+            onChanged: onChanged,
             decoration: InputDecoration(
                 enabledBorder: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.white),

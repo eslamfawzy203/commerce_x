@@ -25,6 +25,7 @@ class ModalBottomSheet extends ConsumerWidget {
           child: const Text('show Product Details'),
           onPressed: () {
             showModalBottomSheet<void>(
+              constraints: const BoxConstraints(maxHeight: 500),
               context: context,
               isScrollControlled: true,
               builder: (BuildContext context) {

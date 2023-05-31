@@ -57,7 +57,7 @@ class Cart extends ConsumerWidget {
                         subtitle: customizedText(
                           data: ref.watch(cartProvider)[index].price.toString(),
                         ),
-                        trailing: SingleChildScrollView(padding: EdgeInsets.symmetric(vertical: 5.h),
+                        trailing: FittedBox(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -67,11 +67,13 @@ class Cart extends ConsumerWidget {
                                     ref.watch(cartProvider.notifier).addToCart(
                                         ref.watch(cartProvider)[index]);
                                   },
-                                  icon: const Icon(opticalSize: 3,
+                                  icon: const Icon(
+                                    opticalSize: 3,
                                     Icons.add,
-                                    size: 12,
+                                    size: 30,
                                   )),
                               customizedText(
+                                  style: const TextStyle(fontSize: 20),
                                   data: ref
                                       .watch(cartProvider)[index]
                                       .quantity
@@ -83,9 +85,10 @@ class Cart extends ConsumerWidget {
                                         .removerFromCart(
                                             ref.watch(cartProvider)[index]);
                                   },
-                                  icon: const Icon(opticalSize:5,
+                                  icon: const Icon(
+                                    opticalSize: 5,
                                     Icons.minimize,
-                                    size: 12,
+                                    size: 30,
                                   )),
                             ],
                           ),

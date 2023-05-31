@@ -1,4 +1,3 @@
-import 'package:commerce_x/Local/shared_helper.dart';
 import 'package:commerce_x/Providers/app_theme_provider.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:flutter/material.dart';

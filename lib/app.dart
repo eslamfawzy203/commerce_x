@@ -20,6 +20,7 @@ class MyApp extends ConsumerWidget {
             darkTheme: ThemeData.dark(useMaterial3: true),
             themeMode: isDarkMode ? ThemeMode.dark : ThemeMode.light,
             home: const Splash()
+            
             );
       },
     );

@@ -12,7 +12,6 @@ void main() async {
   DioHelper().init();
   SharedHelper.prefInstance();
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  //print(apiProducts.length);
   runApp(ProviderScope(overrides: [
     sharedPreferencesProvider.overrideWithValue(prefs),], 
     

@@ -5,9 +5,10 @@ class UserModel<String> {
   String? phone;
   String? name;
   String? email;
+  String? password;
   String? country;
 
-  UserModel({this.id, this.name, this.phone, this.email, this.country});
+  UserModel({this.id, this.name, this.phone, this.email, this.password,this.country});
 
   // To save an object to the Sharedprefrences you have to convert it to map and then to String :
   // The Next two methods are just for save
@@ -18,6 +19,7 @@ class UserModel<String> {
       'name': name,
       'phone': phone,
       'email': email,
+      'password': password,
       'country': country
     };
   }
@@ -34,6 +36,7 @@ class UserModel<String> {
     name = map['name'];
     phone = map['phone'];
     email = map['email'];
+    password = map['password'];
     country = map['country'];
   }
 

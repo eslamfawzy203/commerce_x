@@ -1,4 +1,3 @@
-import 'package:commerce_x/Dummy%20Data/api_data.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

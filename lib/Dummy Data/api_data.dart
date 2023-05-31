@@ -7,10 +7,10 @@ List listofAll = [
   [jewelery],
   [womenClothing]
 ];
-List apiProducts = [];
+List<ApiProductModel> apiProducts = [];
 List categories = [];
-List jewelery = [];
-List womenClothing = [];
+List <ApiProductModel> jewelery = [];
+List <ApiProductModel> womenClothing = [];
 
 getProducts() async {
   try {

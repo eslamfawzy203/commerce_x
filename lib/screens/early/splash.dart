@@ -12,8 +12,11 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
+   //var searchedProducts = [];
+  
   @override
   initState() {
+    //searchedProducts = apiProducts1;
     getProducts();
     getCategories();
     getJewelery();

@@ -74,20 +74,22 @@ class HomeScreen extends ConsumerWidget {
                   scrollDirection: Axis.horizontal,
                   itemCount: apiProducts.length,
                   itemBuilder: (context, index) {
-                    return InkWell(onTap: () {
-                      ref.read(productDetailProvider.notifier)
+                    return InkWell(
+                      onTap: () {
+                        ref
+                            .read(productDetailProvider.notifier)
                             .update((state) => apiProducts[index]);
                         Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => const ProductDetails(),
                             ));
-                    },
+                      },
                       child: customized_api_list_view_widget(
-                          radius: 15,
-                          height: 100.h,
-                          width: 150.w,
-                          path: apiProducts[index].image,
+                          radius: 30,
+                          height: 130.h,
+                          width: 130.w,
+                          path: apiProducts[index].image!,
                           textOnImage: apiProducts[index].title),
                     );
                   }),
@@ -111,11 +113,11 @@ class HomeScreen extends ConsumerWidget {
                             ));
                       },
                       radius: 15,
-                      height: 100.h,
-                      width: 150.w,
-                      path: jewelery[index].image,
-                      name: jewelery[index].title,
-                      price: jewelery[index].price,
+                      height: 120.h,
+                      width: 130.w,
+                      path: jewelery[index].image!,
+                      name: jewelery[index].title!,
+                      price: double.parse(jewelery[index].price!),
                       isFavourite: jewelery[index].isFavourite,
                     );
                   }),
@@ -123,7 +125,7 @@ class HomeScreen extends ConsumerWidget {
             CustomizedRow(data1: 'Best Selling Products', data2: 'See More'),
             Expanded(
               child: ListView.builder(
-                shrinkWrap: true,
+                  shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
                   itemCount: womenClothing.length,
                   itemBuilder: (context, index) {
@@ -141,9 +143,9 @@ class HomeScreen extends ConsumerWidget {
                       radius: 15,
                       height: 80.h,
                       width: 130.w,
-                      path: womenClothing[index].image,
-                      name: womenClothing[index].title,
-                      price: womenClothing[index].price,
+                      path: womenClothing[index].image!,
+                      name: womenClothing[index].title!,
+                      price: double.parse(womenClothing[index].price!),
                       isFavourite: womenClothing[index].isFavourite,
                     );
                   }),

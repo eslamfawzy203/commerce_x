@@ -1,34 +1,42 @@
+import 'package:commerce_x/Dummy%20Data/api_data.dart';
+import 'package:commerce_x/Dummy%20Data/api_product_model.dart';
 import 'package:commerce_x/widgets/clv3.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:commerce_x/widgets/customized_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Search extends StatelessWidget {
+class Search extends StatefulWidget {
+  // Convert to consumer
   const Search({super.key});
 
   @override
+  State<Search> createState() => _SearchState();
+}
+
+class _SearchState extends State<Search> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Padding(
-      padding: const EdgeInsets.all(10),
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.h),
-              child: customizedText(
-                  data: 'Search',
-                  style: TextStyle(fontSize: 14.sp, fontWeight: FontWeight.bold)),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
-              child: Row(
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 10.h),
+                child: customizedText(
+                    data: 'Search',
+                    style: TextStyle(
+                        fontSize: 14.sp, fontWeight: FontWeight.bold)),
+              ),
+              Row(
                 children: [
                   Expanded(
                       child: customizedSearchBar(
+                    onChanged: (value) => searchitems(value),
                     hintText: 'Search Here',
                   )),
                   const Card(
@@ -40,29 +48,43 @@ class Search extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.only(bottom: 10.h),
-              child: ListView.builder(
+              ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: 5,
+                  itemCount: searchedProducts.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return cart_list_view(
-                        leading: Image.asset(
-                            'assets/images/msi_gaming.png'),
+                        leading:
+                            Image.network(searchedProducts[index].image!),
                         title: customizedText(
-                          data: 'Mohsen',
+                          data: searchedProducts[index].title!,
                         ),
                         subtitle: customizedText(
-                          data: "200",
+                          data: searchedProducts[index].description!,
                         ),
-                        trailing: Icon(Icons.shopping_cart));
-                  }),
-            )
-          ],
+                        trailing: const Icon(Icons.shopping_cart));
+                  })
+            ],
+          ),
         ),
       ),
-    ));
+    );
+  }
+
+  List<ApiProductModel> results = [];
+  List<ApiProductModel> searchedProducts = apiProducts;
+  void searchitems(String enteredKeyWord) {
+    if (enteredKeyWord.isEmpty) {
+      searchedProducts = apiProducts;
+    } else {
+      results = apiProducts
+          .where((product) => product.title!
+              .toLowerCase()
+              .contains(enteredKeyWord.toLowerCase()))
+          .toList();
+    }
+    setState(() {
+      searchedProducts = results;
+    });
   }
 }
