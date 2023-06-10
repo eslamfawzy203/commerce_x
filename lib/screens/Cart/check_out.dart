@@ -1,13 +1,10 @@
 import 'package:commerce_x/Dummy%20Data/dummy_data.dart';
 import 'package:commerce_x/screens/Cart/payment.dart';
+import 'package:commerce_x/widgets/clv2_for_dummy_data.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:commerce_x/widgets/customized_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:commerce_x/widgets/clv2_for_dummy_data';
-
-
-
 
 class CheckOut extends StatelessWidget {
   const CheckOut({super.key});
@@ -91,7 +88,7 @@ class CheckOut extends StatelessWidget {
               child: ListView.builder(
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemCount: product.length, //apiProducts.length is not working 
+                  itemCount: product.length, //apiProducts.length is not working
                   itemBuilder: (context, index) {
                     return custom_list_view_2_image_asset_widget(
                       radius: 15,
@@ -99,7 +96,6 @@ class CheckOut extends StatelessWidget {
                       width: 80.w,
                       path: product[index].image,
                       name: product[index].name,
-                 
                       isFavourite: product[index].isFavourite,
                     );
                   }),
@@ -128,7 +124,6 @@ class CheckOut extends StatelessWidget {
                       width: 60.w,
                       path: paymentMethod[index].image,
                       name: paymentMethod[index].name,
-                   
                       isFavourite: paymentMethod[index].isFavourite,
                     );
                   }),
