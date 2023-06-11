@@ -8,7 +8,7 @@ import 'package:flutter/material.dart';
 List<Widget> list =  [
   const HomeScreen(),
   const Category1(),
-  const Search(),
+  Search(),
   const WishList(),
   const Profile()
 ];

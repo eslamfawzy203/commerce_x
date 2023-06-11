@@ -8,6 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:firebase_core/firebase_core.dart';
+
+
+
+
 
 final StateProvider<bool> visibilityOffProvider =
     StateProvider<bool>((ref) => true);
@@ -51,6 +56,7 @@ class SignIn extends HookConsumerWidget {
               customizedTextFormField(
                 hintText: 'e.g name@example.com',
                 controller: emailController,
+                
                 // validator: (val) {
                 //   if (val!.length >= 12 && val.contains('@')) {
                 //     return null;

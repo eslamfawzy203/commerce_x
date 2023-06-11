@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "217151508423",
+    "project_id": "commercex-b9f2e",
+    "storage_bucket": "commercex-b9f2e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217151508423:android:b5a09c8148037a56e2d3e2",
+        "android_client_info": {
+          "package_name": "com.example.commerce_x"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "217151508423-561pi0ig9e5epur7s82ua66u7estrd00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcsdWtXufl3Z672P9DHJWO0IPZouUDCWo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "217151508423-561pi0ig9e5epur7s82ua66u7estrd00.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

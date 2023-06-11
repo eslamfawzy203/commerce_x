@@ -1,5 +1,4 @@
 import 'package:commerce_x/Providers/app_theme_provider.dart';
-import 'package:commerce_x/screens/Home/search.dart';
 import 'package:commerce_x/screens/early/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

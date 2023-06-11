@@ -1,22 +1,23 @@
 import 'package:commerce_x/Dummy%20Data/api_data.dart';
 import 'package:commerce_x/Dummy%20Data/api_product_model.dart';
+import 'package:commerce_x/Providers/searchProvider.dart';
 import 'package:commerce_x/widgets/clv3.dart';
 import 'package:commerce_x/widgets/customized_Text.dart';
 import 'package:commerce_x/widgets/customized_search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Search extends StatefulWidget {
+//List<ApiProductModel> searchedProducts = apiProducts;
+// ignore: must_be_immutable
+class Search extends ConsumerWidget {
   // Convert to consumer
   const Search({super.key});
 
   @override
-  State<Search> createState() => _SearchState();
-}
+  Widget build(BuildContext context, ref) {
+    var list = ref.watch(searchProvider);
 
-class _SearchState extends State<Search> {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(10),
@@ -36,7 +37,9 @@ class _SearchState extends State<Search> {
                 children: [
                   Expanded(
                       child: customizedSearchBar(
-                    onChanged: (value) => searchitems(value),
+                    onChanged: (p0) {
+                      ref.watch(searchProvider.notifier).searchitems(p0);
+                    },
                     hintText: 'Search Here',
                   )),
                   const Card(
@@ -50,17 +53,16 @@ class _SearchState extends State<Search> {
               ),
               ListView.builder(
                   scrollDirection: Axis.vertical,
-                  itemCount: searchedProducts.length,
+                  itemCount: list.length,
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     return cart_list_view(
-                        leading:
-                            Image.network(searchedProducts[index].image!),
+                        leading: Image.network(list[index].image!),
                         title: customizedText(
-                          data: searchedProducts[index].title!,
+                          data: list[index].title!,
                         ),
                         subtitle: customizedText(
-                          data: searchedProducts[index].description!,
+                          data: list[index].description!,
                         ),
                         trailing: const Icon(Icons.shopping_cart));
                   })
@@ -69,22 +71,5 @@ class _SearchState extends State<Search> {
         ),
       ),
     );
-  }
-
-  List<ApiProductModel> results = [];
-  List<ApiProductModel> searchedProducts = apiProducts;
-  void searchitems(String enteredKeyWord) {
-    if (enteredKeyWord.isEmpty) {
-      searchedProducts = apiProducts;
-    } else {
-      results = apiProducts
-          .where((product) => product.title!
-              .toLowerCase()
-              .contains(enteredKeyWord.toLowerCase()))
-          .toList();
-    }
-    setState(() {
-      searchedProducts = results;
-    });
   }
 }

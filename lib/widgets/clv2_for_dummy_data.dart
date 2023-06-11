@@ -27,7 +27,7 @@ class custom_list_view_2_image_asset_widget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: width,
       child: InkWell(
         onTap: onTap,
